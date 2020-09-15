@@ -18,11 +18,17 @@ for (let i = 0; i < num; i++) {
     div.addEventListener('click', () => {
         if(i === answer) {
             div.textContent = "正解"
-            div.classList.add('正解');
+            //analytics.logEvent('select_content');
+            changeKanji(20, "林", "森", 1)
         } else {
             div.classList.add('不正解');
         }
     });
 
     document.body.appendChild(div);
+}
+
+function changeKanji(fontSize, kanjiSeikai, kanjiHuseikai, answer) {
+    div.textContent = kanjiSeikai
+    div.fontSize = fontSize
 }
